@@ -1,0 +1,12 @@
+#Yiru Sun
+sl.out : SaleRunner.o sales.o  
+	g++ -ansi -Wall -g -o sl.out SaleRunner.o sales.o  
+
+SaleRunner.o : SaleRunner.cpp SaleRunner.h sales.h CPUTimer.h 
+	g++ -ansi -Wall -g -c SaleRunner.cpp
+
+sales.o : sales.cpp SaleRunner.h sales.h 
+	g++ -ansi -Wall -g -c sales.cpp
+
+clean : 
+	rm -f sales.out SaleRunner.o  sales.o   
